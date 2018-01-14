@@ -14,6 +14,9 @@ brew update
 brew tap homebrew/bundle
 brew bundle
 
+#install oh-my-zsh
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+
 # Make ZSH the default shell environment
 chsh -s $(which zsh)
 
@@ -29,4 +32,4 @@ mkdir $HOME/Sites
 
 # Set macOS preferences
 # We will run this last because this will reload the shell
-source configs/.macos
+#source configs/.macos
