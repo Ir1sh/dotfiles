@@ -33,6 +33,7 @@ brew 'mas'
 brew 'node'
 brew 'trash'
 brew 'wget'
+brew 'the_silver_searcher'
 
 # Development
 brew 'mysql'
@@ -58,6 +59,7 @@ cask 'virtualbox'
 cask 'virtualbox-extension-pack'
 cask 'vlc'
 cask 'zoomus'
+cask 'emacs'
 
 # Quicklook
 cask 'qlcolorcode'
