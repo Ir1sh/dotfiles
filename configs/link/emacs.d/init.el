@@ -374,6 +374,11 @@ COMMAND, ARG, IGNORED are the arguments required by the variable
 (use-package gruvbox-theme :ensure t)
 (use-package color-theme-sanityinc-tomorrow :ensure t)
 (use-package zenburn-theme :ensure t :defer t)
+(use-package ensime
+  :ensure t
+  :pin melpa-stable
+  :commands ensime ensimemode)
+(add-hook 'scala-mode-hook 'ensime-mode)
 
 (use-package mmm-mode :ensure t :defer t)
 (use-package yaml-mode :ensure t :defer t)
