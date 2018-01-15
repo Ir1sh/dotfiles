@@ -24,7 +24,7 @@
     "nw" 'widen
     "o"  'delete-other-windows  ;; C-w o
     "p"  'helm-show-kill-ring
-    "s"  'ag-project            ;; Ag search from project's root
+    "ss"  'ag-project            ;; Ag search from project's root
     "r"  'chrome-reload
     "R"  (lambda () (interactive) (font-lock-fontify-buffer) (redraw-display))
     "S"  'delete-trailing-whitespace
@@ -32,7 +32,62 @@
     "T"  'gtags-find-tag
     "w"  'save-buffer
     "x"  'helm-M-x
-    "y"  'yank-to-x-clipboard)
+    "y"  'yank-to-x-clipboard
+    "sf" 'ensime-format-source
+    "sR" 'ensime-show-uses-of-symbol-at-point
+    "si" 'ensime-inspect-type-at-point
+    ;; "sif"'ensime-inspect-type-at-point-other-frame
+    "st" 'ensime-type-at-point
+    "se" 'ensime-print-errors-at-point
+    "sp" 'ensime-inspect-package-at-point
+    "so" 'ensime-inspect-project-package
+    "su" 'ensime-undo-peek
+    "scc"'ensime-typecheck-current-buffer
+    "sca"'ensime-typecheck-all
+    "scr"'ensime-reload-open-files
+    "sce"'ensime-show-all-errors-and-warnings
+    "sTt"'ensime-goto-test
+    "sTi"'ensime-goto-impl
+    "sra"'ensime-refactor-add-type-annotation
+    "sro"'ensime-refactor-diff-organize-imports
+    "srt"'ensime-import-type-at-point
+    "srr"'ensime-refactor-diff-rename
+    "srl"'ensime-refactor-diff-extract-local
+    "srm"'ensime-refactor-diff-extract-method
+    "sri"'ensime-refactor-diff-inline-local
+    "sn."'ensime-edit-definition
+    "sn,"'ensime-pop-find-definition-stack
+    "snn"'ensime-forward-note
+    "snp"'ensime-backward-note
+    "snv."'ensime-expand-selection-command
+    "snvv"'ensime-search
+    "svd"'ensime-show-doc-for-symbol-at-point
+    "sbs"'ensime-sbt-switch
+    "sbS"'ensime-stacktrace-switch
+    "sbc"'ensime-sbt-do-compile
+    "sbn"'ensime-sbt-do-clean
+    "sbo"'ensime-sbt-do-test-only-dwim
+    "sbp"'ensime-sbt-do-package
+    "sbr"'ensime-sbt-do-run
+    "sbT"'ensime-sbt-do-test-dwim
+    "sbt"'ensime-sbt-do-test-quick-dwim
+    "sdd"'ensime-db-attach
+    "sdb"'ensime-db-set-break
+    "sdu"'ensime-db-clear-break
+    "sda"'ensime-db-clear-all-breaks
+    "sdr"'ensime-db-run
+    "sds"'ensime-db-step
+    "sdo"'ensime-db-step-out
+    "sdn"'ensime-db-next
+    "sdc"'ensime-db-continue
+    "sdq"'ensime-db-quit
+    "sdt"'ensime-db-backtrace
+    "sdi"'ensime-db-inspect-value-at-point
+    "slz"'ensime-inf-switch
+    "slr"'ensime-inf-eval-region
+    "slv"'ensime-inf-eval-buffer
+    "sll"'ensime-inf-load-file
+    "l"  'toggle-read-only)
 
   (defun magit-blame-toggle ()
     "Toggle magit-blame-mode on and off interactively."
