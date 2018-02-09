@@ -19,3 +19,7 @@ configs/link/emacs.d/*
 !configs/link/emacs.d/init.el
 !configs/link/emacs.d/custom.el
 !configs/link/emacs.d/themes
+
+# ignore sbt compied stuff
+configs/link/sbt/boot
+configs/link/sbt/preloaded/*
