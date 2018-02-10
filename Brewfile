@@ -34,6 +34,7 @@ brew 'node'
 brew 'trash'
 brew 'wget'
 brew 'the_silver_searcher'
+brew 'tmux'
 
 # Development
 brew 'mysql'
@@ -73,6 +74,7 @@ cask 'font-source-code-pro-for-powerline'
 cask 'font-source-code-pro'
 cask 'font-source-sans-pro'
 cask 'font-source-serif-pro'
+cask 'font-fira-code
 
 # Install Mac App Store apps
 mas '1Password', id: 443987910

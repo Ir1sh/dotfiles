@@ -37,3 +37,25 @@ ehthumbs.db
 Thumbs.db
 .idea/
 .vagrant/
+
+#Ensime Stuff
+.ensime
+.ensime_cache/
+ensime.sbt
+
+# sbt specific
+.cache
+.history
+.lib/
+dist/*
+target/
+lib_managed/
+src_managed/
+project/boot/
+project/plugins/project/
+.sbtserver
+.sbtserver.lock
+
+#emacs stuff
+# will unignore .org on a project basis if I need to 
+*.org

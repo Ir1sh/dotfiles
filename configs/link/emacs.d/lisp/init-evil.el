@@ -15,7 +15,8 @@
     "B"  'magit-blame-toggle
     "c"  'comment-dwim
     "d"  'kill-this-buffer
-    "D"  'open-current-line-in-codebase-search
+    "DD"  'dash-at-point
+    "DWD" 'dash-at-point-with-docset
     "f"  'helm-imenu            ;; Jump to function in buffer
     "g"  'magit-status
     "h"  'fontify-and-browse    ;; HTML-ize the buffer and browse the result
@@ -171,7 +172,7 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
       (abort-recursive-edit)))
 
   ;; Make escape quit everything, whenever possible.
-  (define-key evil-normal-state-map [escape] 'keyboard-escape-quit)
+  ;; (define-key evil-normal-state-map [escape] 'keyboard-escape-quit)
   (define-key evil-visual-state-map [escape] 'keyboard-quit)
   (define-key minibuffer-local-map [escape] 'minibuffer-keyboard-quit)
   (define-key minibuffer-local-ns-map [escape] 'minibuffer-keyboard-quit)

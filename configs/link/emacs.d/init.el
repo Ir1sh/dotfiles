@@ -379,9 +379,12 @@ COMMAND, ARG, IGNORED are the arguments required by the variable
   :pin melpa-stable
   :commands ensime ensimemode)
 (add-hook 'scala-mode-hook 'ensime-mode)
-
+;; use scala mode in .sc files also
+(add-to-list 'auto-mode-alist '("\\.sc\\'" . scala-mode))
 (use-package mmm-mode :ensure t :defer t)
 (use-package yaml-mode :ensure t :defer t)
+
+(require `init-ensime)
 
 (use-package yasnippet
   :ensure t
@@ -664,10 +667,11 @@ is the buffer location at which the function was found."
 (when (memq window-system '(mac ns))
   (setq ns-use-srgb-colorspace nil))
 
-;;(use-package darcula-theme
-;;  :ensure t
-;;  :config
-;;)
+(use-package dash-at-point
+ :ensure t
+ :config
+)
+(add-to-list 'dash-at-point-mode-alist '(scala-mode . "scala"))
 
 (setq server-socket-dir (expand-file-name "server" user-emacs-directory))
 (server-start)
