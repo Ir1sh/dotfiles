@@ -8,12 +8,15 @@
 ;;; Code:
 
 
-;; Leave this here, or package.el will just add it again.
-(package-initialize)
 
 (require 'package)
 (setq package-enable-at-startup nil)
+(add-to-list 'package-archives
+             '("melpa" . "http://melpa.milkbox.net/packages/") t)
 (add-to-list 'load-path (expand-file-name "lisp" user-emacs-directory))
+
+;; Leave this here, or package.el will just add it again.
+(package-initialize)
 
 ;; Also add all directories within "lisp"
 ;; I use this for packages I'm actively working on, mostly.
@@ -386,18 +389,6 @@ COMMAND, ARG, IGNORED are the arguments required by the variable
 
 (require `init-ensime)
 
-(use-package yasnippet
-  :ensure t
-  :defer t
-  :config
-  (yas-reload-all)
-  (setq yas-snippet-dirs '("~/.emacs.d/snippets"
-                           "~/.emacs.d/remote-snippets"))
-  (setq tab-always-indent 'complete)
-  (setq yas-prompt-functions '(yas-completing-prompt
-                               yas-ido-prompt
-                               yas-dropdown-prompt))
-  (define-key yas-minor-mode-map (kbd "<escape>") 'yas-exit-snippet))
 
 (use-package which-key
   :ensure t
@@ -671,6 +662,26 @@ is the buffer location at which the function was found."
  :ensure t
  :config
 )
+
+(use-package yasnippet
+  :ensure t
+  :defer t
+  :config
+  (yas-reload-all)
+  ;; (setq yas-snippet-dirs '("~/.emacs.d/snippets"
+  ;;                          "~/.emacs.d/remote-snippets"))
+  (setq tab-always-indent 'complete)
+  (setq yas-prompt-functions '(yas-completing-prompt
+                               yas-ido-prompt
+                               yas-dropdown-prompt))
+  (define-key yas-minor-mode-map (kbd "<escape>") 'yas-exit-snippet))
+(yas-global-mode 1)
+
+(use-package yasnippet-snippets
+  :ensure t
+  :config)
+(yas-reload-all)
+
 (add-to-list 'dash-at-point-mode-alist '(scala-mode . "scala"))
 
 (setq server-socket-dir (expand-file-name "server" user-emacs-directory))

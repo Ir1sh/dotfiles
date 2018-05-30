@@ -35,6 +35,8 @@ brew 'trash'
 brew 'wget'
 brew 'the_silver_searcher'
 brew 'tmux'
+brew 'kafkacat'
+brew 'yarn'
 
 # Development
 brew 'mysql'

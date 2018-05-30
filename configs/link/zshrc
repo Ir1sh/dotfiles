@@ -162,6 +162,9 @@ alias e="$EDITOR"
 export ALTERNATE_EDITOR=""
 export VISUAL="emacsclient"
 
+## SBT
+export SBT_OPTS="-Xmx2G -XX:+UseConcMarkSweepGC -XX:+CMSClassUnloadingEnabled -XX:MaxPermSize=2G -Xss2M"
+
 if [ -f "$HOME/.zshrc_$MY_LOCATION" ]; then
   source "$HOME/.zshrc_$MY_LOCATION"
 fi
@@ -197,3 +200,13 @@ alias reloaddns="dscacheutil -flushcache && sudo killall -HUP mDNSResponder"
 alias ll="$(brew --prefix coreutils)/libexec/gnubin/ls -ahlF --color --group-directories-first"
 alias weather="curl -4 http://wttr.in"
 alias shrug="echo '¯\_(ツ)_/¯' | pbcopy"
+
+#iOffice
+export VISITOR_SERVICE_CLIENT_CODE=aa436ea24e167689cbde035f9ad75e1a
+export VISITOR_SERVICE_CLIENT_SECRET=16356d0cb0c8b8117cbc2e7e39397f4bdf499ec2
+export PREFERENCE_SERVICE_CLIENT_CODE=G3e8nOrFJnG1LiOWceLxY7au5eV
+export PREFERENCE_SERVICE_CLIENT_SECRET=zi5QNIY0THY1EfqkMYzsmFlr0swSaoPPrming6Luyzdl8qT
+export LOG_LEVEL=INFO
+export LOGGER_TEMPLATE={15}
+export MESOS_URL=http://mesos.rs.corp.iofficecorp.com
+export MARATHON_URL=http://mesos16.rs.corp.iofficecorp.com:8080
