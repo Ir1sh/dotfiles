@@ -389,6 +389,9 @@ COMMAND, ARG, IGNORED are the arguments required by the variable
 
 (require `init-ensime)
 
+(use-package haskell-mode
+         :commands haskell-mode
+         :config)
 
 (use-package which-key
   :ensure t
