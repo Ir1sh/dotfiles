@@ -136,6 +136,20 @@ fi
 alias dotfiles="cd $DOTFILES"
 alias library="cd $HOME/Library"
 alias sites="cd $HOME/Sites"
+alias workspace="cd $HOME/workspace"
+alias ioc="cd $HOME/workspace/iofficeconnect"
+alias iomisc="cd $HOME/workspace/iofficemisc"
+alias iorepos="cd $HOME/workspace/iofficerepos"
+alias iotxt="cd $HOME/workspace/iofficerepos/text-service"
+alias ioai="cd $HOME/workspace/iofficerepos/applicationInfoService"
+alias ioauth="cd $HOME/workspace/iofficerepos/auth-service"
+alias iokafka="cd $HOME/workspace/iofficerepos/metamorphosis"
+alias ioge="cd $HOME/workspace/iofficerepos/ge-current-service"
+alias iosensors="cd $HOME/workspace/iofficerepos/sensor-service"
+alias ioprefs="cd $HOME/workspace/iofficerepos/pref-service"
+alias iogate="cd $HOME/workspace/iofficerepos/gateway-service"
+alias iovisitor="cd $HOME/workspace/iofficerepos/visitorApi"
+alias ioexchange="cd $HOME/workspace/iofficerepos/EwsService"
 
 # Vagrant
 alias v="vagrant global-status"
@@ -164,6 +178,9 @@ export VISUAL="emacsclient"
 
 ## SBT
 export SBT_OPTS="-Xmx2G -XX:+UseConcMarkSweepGC -XX:+CMSClassUnloadingEnabled -XX:MaxPermSize=2G -Xss2M"
+
+## Ensime
+alias ensime="ctags -Re . && sbt clean ensimeConfig test:compile ensimeServerIndex"
 
 if [ -f "$HOME/.zshrc_$MY_LOCATION" ]; then
   source "$HOME/.zshrc_$MY_LOCATION"
@@ -210,3 +227,10 @@ export LOG_LEVEL=INFO
 export LOGGER_TEMPLATE={15}
 export MESOS_URL=http://mesos.rs.corp.iofficecorp.com
 export MARATHON_URL=http://mesos16.rs.corp.iofficecorp.com:8080
+export DEV_BROKERS=91316558-kafka0.pub.va.eventador.io:9092
+export PROD_BROKERS=40f2dbc2-kafka0.pub.va.eventador.io:9092,40f2dbc2-kafka1.pub.va.eventador.io:9092,40f2dbc2-kafka2.pub.va.eventador.io:9092
+export KAFKA_BROKERS=$DEV_BROKERS
+export TWILIO_ROOT_ACCID=AC968b5127f9aca7317f009fbbd7d236c2
+export TWILIO_ROOT_ACCTOKEN=5c376e94d36bdba73f3851af180eceb7
+export TEXT_SERVICE_CALLBACK_URL=http://7cfe663b.ngrok.io
+export TEXT_SERVICE_PROXY_DURATION="2 minutes"
