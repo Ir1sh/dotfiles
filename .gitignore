@@ -23,3 +23,5 @@ configs/link/emacs.d/*
 # ignore sbt compied stuff
 configs/link/sbt/boot
 configs/link/sbt/preloaded/*
+/configs/link/sbt/1.0/plugins/idea.sbt
+/configs/link/sbt/0.13/dependency/*
