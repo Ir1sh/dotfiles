@@ -59,3 +59,9 @@ project/plugins/project/
 #emacs stuff
 # will unignore .org on a project basis if I need to 
 *.org
+/.bloop/*
+/.metals/*
+/project/.bloop/*
+/TAGS
+/configs/link/sbt/0.13/plugins/metals.sbt
+/configs/link/sbt/1.0/plugins/metals.sbt

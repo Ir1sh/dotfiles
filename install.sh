@@ -23,6 +23,19 @@ chsh -s $(which zsh)
 #install ammonite repl ammonite.io for scala 2.12 and 2.11
 sudo curl -L -o /usr/local/bin/amm https://git.io/vdNv2 && sudo chmod +x /usr/local/bin/amm
 sudo curl -L -o /usr/local/bin/amm2.11 https://git.io/vdNvV && sudo chmod +x /usr/local/bin/amm2.11
+
+#install coursier and metals
+curl -L -o coursier https://git.io/coursier
+chmod +x coursier
+./coursier bootstrap \
+  --java-opt -Xss4m \
+  --java-opt -Xms100m \
+  --java-opt -Dmetals.client=emacs \
+  org.scalameta:metals_2.12:0.6.1 \
+  -r bintray:scalacenter/releases \
+  -r sonatype:snapshots \
+  -o /usr/local/bin/metals-emacs -f
+
 # Install global NPM packages
 npm install --global yarn
 

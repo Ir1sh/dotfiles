@@ -150,6 +150,7 @@ alias ioprefs="cd $HOME/workspace/iofficerepos/pref-service"
 alias iogate="cd $HOME/workspace/iofficerepos/gateway-service"
 alias iovisitor="cd $HOME/workspace/iofficerepos/visitorApi"
 alias ioexchange="cd $HOME/workspace/iofficerepos/EwsService"
+alias iolobby="cd $HOME/workspace/iofficerepos/lobbyconnect-webhook-service"
 
 # Vagrant
 alias v="vagrant global-status"
@@ -223,13 +224,18 @@ export VISITOR_SERVICE_CLIENT_CODE=aa436ea24e167689cbde035f9ad75e1a
 export VISITOR_SERVICE_CLIENT_SECRET=16356d0cb0c8b8117cbc2e7e39397f4bdf499ec2
 export PREFERENCE_SERVICE_CLIENT_CODE=G3e8nOrFJnG1LiOWceLxY7au5eV
 export PREFERENCE_SERVICE_CLIENT_SECRET=zi5QNIY0THY1EfqkMYzsmFlr0swSaoPPrming6Luyzdl8qT
+export SENSOR_SERVICE_CLIENT_CODE=G3e8nOrFJnG1LiOWceLxY7au5eV
+export SENSOR_SERVICE_CLIENT_SECRET=zi5QNIY0THY1EfqkMYzsmFlr0swSaoPPrming6Luyzdl8qT
 export LOG_LEVEL=INFO
 export LOGGER_TEMPLATE={15}
 export MESOS_URL=http://mesos.rs.corp.iofficecorp.com
 export MARATHON_URL=http://mesos16.rs.corp.iofficecorp.com:8080
+export DEV_SCHEMA_REGISTRY_URL=http://mesosdev.rs.corp.iofficecorp.com/kafka/schema-registry
 export DEV_BROKERS=91316558-kafka0.pub.va.eventador.io:9092
+export PROD_SCHEMA_REGISTRY_URL=http://mesos.rs.corp.iofficecorp.com/kafka/schema-registry
 export PROD_BROKERS=40f2dbc2-kafka0.pub.va.eventador.io:9092,40f2dbc2-kafka1.pub.va.eventador.io:9092,40f2dbc2-kafka2.pub.va.eventador.io:9092
 export KAFKA_BROKERS=$DEV_BROKERS
+export KAFKA_SCHEMA_REGISTRY_URL=$DEV_SCHEMA_REGISTRY_URL
 export TWILIO_ROOT_ACCID=AC968b5127f9aca7317f009fbbd7d236c2
 export TWILIO_ROOT_ACCTOKEN=5c376e94d36bdba73f3851af180eceb7
 export TEXT_SERVICE_CALLBACK_URL=http://7cfe663b.ngrok.io

@@ -11,8 +11,15 @@
 
 (require 'package)
 (setq package-enable-at-startup nil)
+;; (add-to-list 'package-archives
+;;              '("melpa" . "http://melpa.milkbox.net/packages/") t)
 (add-to-list 'package-archives
-             '("melpa" . "http://melpa.milkbox.net/packages/") t)
+             '("melpa" . "https://melpa.org/packages/") t)
+
+;; Enable defer and ensure by default for use-package
+;; (setq use-package-always-defer t
+;;       use-package-always-ensure t)
+
 (add-to-list 'load-path (expand-file-name "lisp" user-emacs-directory))
 
 ;; Leave this here, or package.el will just add it again.
@@ -377,17 +384,46 @@ COMMAND, ARG, IGNORED are the arguments required by the variable
 (use-package gruvbox-theme :ensure t)
 (use-package color-theme-sanityinc-tomorrow :ensure t)
 (use-package zenburn-theme :ensure t :defer t)
-(use-package ensime
-  :ensure t
-  :pin melpa-stable
-  :commands ensime ensimemode)
-(add-hook 'scala-mode-hook 'ensime-mode)
-;; use scala mode in .sc files also
-(add-to-list 'auto-mode-alist '("\\.sc\\'" . scala-mode))
-(use-package mmm-mode :ensure t :defer t)
-(use-package yaml-mode :ensure t :defer t)
 
-(require `init-ensime)
+;; Enable scala-mode and sbt-mode
+(use-package scala-mode
+  :mode "\\.s\\(cala\\|bt\\)$")
+
+(use-package sbt-mode
+  :commands sbt-start sbt-command
+  :config
+  ;; WORKAROUND: https://github.com/ensime/emacs-sbt-mode/issues/31
+  ;; allows using SPACE when in the minibuffer
+  (substitute-key-definition
+   'minibuffer-complete-word
+   'self-insert-command
+   minibuffer-local-completion-map))
+
+;; Enable nice rendering of diagnostics like compile errors.
+(use-package flycheck
+  :init (global-flycheck-mode))
+
+(use-package lsp-mode
+  ;; Optional - enable lsp-mode automatically in scala files
+  :hook (scala-mode . lsp)
+  :config (setq lsp-prefer-flymake nil))
+
+(use-package lsp-ui)
+
+;; Add company-lsp backend for metals
+(use-package company-lsp)
+
+;; (use-package ensime
+;;   :ensure t
+;;   :pin melpa-stable
+;;   :commands ensime ensimemode)
+;; (add-hook 'scala-mode-hook 'ensime-mode)
+;; ;; use scala mode in .sc files also
+;; (add-to-list 'auto-mode-alist '("\\.sc\\'" . scala-mode))
+;; (use-package mmm-mode :ensure t :defer t)
+;; (use-package yaml-mode :ensure t :defer t)
+
+;; (require `init-ensime)
 
 (use-package haskell-mode
          :commands haskell-mode
@@ -690,5 +726,6 @@ is the buffer location at which the function was found."
 (setq server-socket-dir (expand-file-name "server" user-emacs-directory))
 (server-start)
 
+(setq load-prefer-newer t)
 (provide 'init)
 ;;; init.el ends here
