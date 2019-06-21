@@ -79,7 +79,5 @@ cask 'font-source-serif-pro'
 cask 'font-fira-code
 
 # Install Mac App Store apps
-mas '1Password', id: 443987910
-mas 'Giphy Capture', id: 668208984
 mas 'Paw', id: 584653203
 mas 'Unsplash Wallpapers', id: 1284863847
